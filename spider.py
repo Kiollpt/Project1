@@ -7,6 +7,7 @@ import urllib.request
 import os
 import json
 import spider_sql
+import spider_mongodb
 
 ctx = ssl.create_default_context()
 ctx.check_hostname = False
@@ -60,3 +61,4 @@ with open('data.json', 'w', encoding='utf-8') as f:
     json.dump(articles, f, indent=2, sort_keys=True, ensure_ascii=False)
 
 spider_sql.run_sql()
+spider_mongodb.run_mongo()
